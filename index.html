@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traductor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Traductor</h1>
+    <form>
+      <label for="word">Palabra/Word</label>
+      <input type="text" id="word" placeholder="Introduce una palabra">
+      
+      <div class="language-selection">
+        <input type="radio" id="english" name="language" value="english" checked>
+        <label for="english">Inglés</label>
+        <input type="radio" id="spanish" name="language" value="spanish">
+        <label for="spanish">Español</label>
+      </div>
+
+      <button type="button">Traducir/Translate</button>
+      
+      <div id="response">response/respuesta</div>
+
+      <div class="categories">
+        <h2>Categorías</h2>
+        <label><input type="radio" name="category" value="animals"> Animales</label>
+        <label><input type="radio" name="category" value="fruits"> Frutas</label>
+        <label><input type="radio" name="category" value="colors"> Colores</label>
+        <label><input type="radio" name="category" value="descriptions"> Descripciones</label>
+        <label><input type="radio" name="category" value="skills"> Habilidades</label>
+      </div>
+
+      <textarea placeholder="Aquí irá la lista de palabras"></textarea>
+      <button type="button">Nueva palabra</button>
+    </form>
+  </div>
+
+  <script type="module" src="app.js"></script>
+  <script type="module" src="dictionary.js"></script>
+
+</body>
+</html>
