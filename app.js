@@ -22,7 +22,7 @@ function generateUniqueId(category) {
 // Función para ordenar palabras
 function sortWords(words, field) {
     return [...words].sort((a, b) => 
-        a[field].toLowerCase().localeCompare(b[field].toLowerCase())
+        a.toLowerCase().localeCompare(b[field].toLowerCase())
     );
 }
 
@@ -32,7 +32,7 @@ function showCategoryWords(categoryName, sortBy = currentSortOrder) {
     const category = dictionary.categories[categoryName];
     if (category) {
         const sortedWords = sortWords(category, sortBy);
-        textarea.value = sortedWords.map(entry => 
+        textarea.value = sorteWords.map(entry => 
             `${entry.english} - ${entry.spanish} (${entry.example})`
         ).join('\n');
     }
@@ -46,7 +46,7 @@ function addNewWord() {
     }
 
     const newWord = prompt('Ingrese la palabra en inglés / Enter the word in English:');
-    const newTranslation = prompt('Ingrese la traducción en español / Enter the Spanish translation:');
+    const newTrnslation = prompt('Ingrese la traducción en español / Enter the Spanish translation:');
     const newExample = prompt('Ingrese un ejemplo de uso / Enter a usage example:');
 
     if (newWord && newTranslation && newExample) {
@@ -65,7 +65,7 @@ function addNewWord() {
 
 // Función para traducir palabras
 function translateWord() {
-    const word = wordInput.value.toLowerCase();
+    const word = wrdInput.value.toLowerCase();
     const isEnglish = document.getElementById('english').checked;
     const sourceField = isEnglish ? 'english' : 'spanish';
     const targetField = isEnglish ? 'spanish' : 'english';
